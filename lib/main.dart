@@ -22,11 +22,12 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => HomeScreen(),
-        '/row':(context) => RowPage(),
+        '/row':(context) => RowPage(text:""),
         '/column':(context) => ColumnPage(),
         '/menu':(context) => ListViewMenu(),
         '/card':(context) => CardPage(),
-        '/my-card':(context) => MyCard(),
+        // '/my-card':(context) => MyCard(),
+        MyCard.id:(context) => MyCard(name: "My Card Widget"),
       },
     );
   }

@@ -19,14 +19,17 @@ class HomeScreen extends StatelessWidget {
             UserAccountsDrawerHeader(
               accountName: Text("Mr.Mark Zuckerberg"),
               accountEmail: Text("mark@gmail.com"),
-              currentAccountPicture: CircleAvatar(child: Icon(Icons.android)),
+              currentAccountPicture: CircleAvatar(
+                  child: Icon(Icons.android)
+                // backgroundImage: NetworkImage('https://f.ptcdn.info/642/022/000/1408782649-photo-o.jpg'),
+              ),
             ),
             ListTile(
               leading: Icon(Icons.home),
               title: Text("Home"),
-              onTap: () {
+              onTap: () async {
                 debugPrint("Home menu");
-                Navigator.pushReplacement(
+                await Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => HomeScreen()),
                 );
@@ -35,60 +38,61 @@ class HomeScreen extends StatelessWidget {
             ListTile(
               leading: Icon(Icons.apps),
               title: Text("Row Widget"),
-              onTap: () {
+              onTap: () async {
                 debugPrint("Row Widget");
-                Navigator.push(
+                await Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => RowPage()),
+                  MaterialPageRoute(builder: (context) => RowPage(text: "Row Widget")),
                 );
               },
             ),
             ListTile(
               leading: Icon(Icons.apps),
               title: Text("Column Widget"),
-              onTap: () {
+              onTap: () async {
                 debugPrint("TEST Column");
                 // Navigator.push(
                 //   context,
                 //   MaterialPageRoute(builder: (context) => ColumnPage()),
                 // );
-                Navigator.pushNamed(context, '/column');
+                await Navigator.pushNamed(context, '/column');
               },
             ),
             ListTile(
               leading: Icon(Icons.apps),
               title: Text("ListView Menu"),
-              onTap: () {
-                debugPrint("TEST ListView");
+              onTap: () async {
                 // Navigator.push(
                 //   context,
                 //   MaterialPageRoute(builder: (context) => ListViewMenu()),
                 // );
-                Navigator.pushNamed(context, '/menu');
+                final result =  await Navigator.pushNamed(context, '/menu');
+                debugPrint("ListView Menu: $result");
               },
             ),
             ListTile(
               leading: Icon(Icons.credit_score_rounded),
               title: Text("Card and Inkwell"),
-              onTap: () {
+              onTap: () async {
                 debugPrint("TEST Card");
                 // Navigator.push(
                 //   context,
                 //   MaterialPageRoute(builder: (context) => CardPage()),
                 // );
-                Navigator.pushNamed(context, '/card');
+                await Navigator.pushNamed(context, '/card');
               },
             ),
             ListTile(
               leading: Icon(Icons.credit_card),
-              title: Text("Card and Inkwell"),
-              onTap: () {
-                debugPrint("TEST Card2");
+              title: Text("My Card"),
+              onTap: () async {
+                debugPrint("TEST My card");
                 // Navigator.push(
                 //   context,
                 //   MaterialPageRoute(builder: (context) => MyCard()),
                 // );
-                Navigator.pushNamed(context, '/my-card');
+                // Navigator.pushNamed(context, '/my-card');
+                await Navigator.pushNamed(context, MyCard.id);
               },
             ),
           ],
