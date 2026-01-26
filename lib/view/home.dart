@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_week14/view/mycard.dart';
+import 'package:flutter_week14/view/row_page.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -34,7 +36,11 @@ class HomeScreen extends StatelessWidget {
               leading: Icon(Icons.apps),
               title: Text("Row Widget"),
               onTap: () {
-                debugPrint("TEST Row");
+                debugPrint("Row Widget");
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => RowPage()),
+                );
               },
             ),
             ListTile(
@@ -42,6 +48,11 @@ class HomeScreen extends StatelessWidget {
               title: Text("Column Widget"),
               onTap: () {
                 debugPrint("TEST Column");
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => ColumnPage()),
+                // );
+                Navigator.pushNamed(context, '/column');
               },
             ),
             ListTile(
@@ -49,6 +60,11 @@ class HomeScreen extends StatelessWidget {
               title: Text("ListView Menu"),
               onTap: () {
                 debugPrint("TEST ListView");
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => ListViewMenu()),
+                // );
+                Navigator.pushNamed(context, '/menu');
               },
             ),
             ListTile(
@@ -56,6 +72,11 @@ class HomeScreen extends StatelessWidget {
               title: Text("Card and Inkwell"),
               onTap: () {
                 debugPrint("TEST Card");
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => CardPage()),
+                // );
+                Navigator.pushNamed(context, '/card');
               },
             ),
             ListTile(
@@ -63,6 +84,11 @@ class HomeScreen extends StatelessWidget {
               title: Text("Card and Inkwell"),
               onTap: () {
                 debugPrint("TEST Card2");
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(builder: (context) => MyCard()),
+                // );
+                Navigator.pushNamed(context, '/my-card');
               },
             ),
           ],
