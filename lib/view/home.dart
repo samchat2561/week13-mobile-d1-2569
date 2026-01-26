@@ -23,7 +23,11 @@ class HomeScreen extends StatelessWidget {
               leading: Icon(Icons.home),
               title: Text("Home"),
               onTap: () {
-                debugPrint("TEST ok");
+                debugPrint("Home menu");
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomeScreen()),
+                );
               },
             ),
             ListTile(

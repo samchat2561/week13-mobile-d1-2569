@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_week14/view/mycard.dart';
+import 'package:flutter_week14/view/home.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Flutter App",
-      home: MyCard(),
+      home: HomeScreen(),
     );
   }
 }
